@@ -1,7 +1,7 @@
-import { DivTest } from "./App.styled";
+import AppRoutes from "../AppRoutes/AppRoutes";
 
 function App() {
-  return <DivTest>Настройка проекта</DivTest>;
+  return <AppRoutes />;
 }
 
 export default App;
