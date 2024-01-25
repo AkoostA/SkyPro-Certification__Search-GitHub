@@ -1,10 +1,10 @@
 {
   "files": {
-    "main.js": "/skypro__search-github/static/js/main.b9c194ec.js",
+    "main.js": "/skypro__search-github/static/js/main.263a7dce.js",
     "index.html": "/skypro__search-github/index.html",
-    "main.b9c194ec.js.map": "/skypro__search-github/static/js/main.b9c194ec.js.map"
+    "main.263a7dce.js.map": "/skypro__search-github/static/js/main.263a7dce.js.map"
   },
   "entrypoints": [
-    "static/js/main.b9c194ec.js"
+    "static/js/main.263a7dce.js"
   ]
 }
