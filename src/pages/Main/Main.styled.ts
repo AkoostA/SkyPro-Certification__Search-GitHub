@@ -1,6 +1,7 @@
 import styled from "styled-components";
 
-export const DivContent = styled.div`
-  text-align: center;
-  color: white;
-`;
+export const DivContent = styled.div``;
+
+export const H2Main = styled.h2`
+
+`

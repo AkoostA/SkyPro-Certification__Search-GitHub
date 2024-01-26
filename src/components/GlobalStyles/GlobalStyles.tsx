@@ -4,7 +4,16 @@ const GlobalStyles = createGlobalStyle`
     * {
         margin: 0;
         padding: 0;
-        background-color: #282c34;
+    }
+
+    body {
+        background-color: #0d1117;
+        padding: 20px 30px;
+    }
+
+    button, input {
+        cursor: pointer;
+        border: none;
     }
 `;
 
