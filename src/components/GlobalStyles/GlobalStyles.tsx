@@ -15,6 +15,21 @@ const GlobalStyles = createGlobalStyle`
         cursor: pointer;
         border: none;
     }
+
+    button {
+        background: #597bbe;
+        border-radius: 5px;
+        transition: all 0.5s; 
+        font-size: 20px;
+
+        &:hover {
+        background: #235fd4;
+        }
+
+        &:disabled {
+        background: #b2acac;
+        }
+    }
 `;
 
 export default GlobalStyles;

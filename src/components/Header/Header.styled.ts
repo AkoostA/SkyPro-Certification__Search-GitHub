@@ -1,6 +1,6 @@
 import styled from "styled-components";
 
-export const DivHeader = styled.div`
+export const HeaderContent = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -9,11 +9,11 @@ export const DivHeader = styled.div`
   color: white;
 `;
 
-export const H1Header = styled.h1`
+export const HeaderTitle = styled.h1`
   font-size: 30px;
 `;
 
-export const PHeader = styled.p`
+export const HeaderText = styled.p`
   font-size: 20px;
   margin-bottom: 20px;
 `;

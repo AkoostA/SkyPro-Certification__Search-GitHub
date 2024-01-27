@@ -1,8 +1,8 @@
 import styled from "styled-components";
 
-export const DivContent = styled.div``;
+export const SearchContent = styled.div``;
 
-export const DivSearch = styled.div`
+export const SearchUser = styled.div`
   height: 50px;
   padding: 10px;
   background: white;
@@ -11,7 +11,7 @@ export const DivSearch = styled.div`
   align-items: center;
 `;
 
-export const InputSearch = styled.input`
+export const SearchInput = styled.input`
   width: 100%;
   height: 100%;
   font-size: 20px;
@@ -24,26 +24,21 @@ export const InputSearch = styled.input`
   }
 `;
 
-export const ButtonSearch = styled.button`
-  background: #597bbe;
-  border-radius: 5px;
+export const SearchButton = styled.button`
   height: 100%;
   width: 150px;
   padding: 0px 10px;
-  font-size: 20px;
-  transition: all 0.5s;
-
-  &:hover {
-    background: #235fd4;
-  }
-
-  &:disabled {
-    background: #b2acac;
-  }
 `;
 
-export const PSearch = styled.p`
+export const SearchText = styled.p`
   margin-top: 10px;
   margin-bottom: 10px;
   color: white;
+`;
+
+export const SearchErrorText = styled.p`
+  text-align: center;
+  margin-top: 20px;
+  font-size: 30px;
+  color: coral;
 `;

@@ -1,6 +1,8 @@
 import styled from "styled-components";
 
-export const DivContent = styled.div`
+export const NotFoundContent = styled.div`
   text-align: center;
   color: white;
 `;
+
+export const NotFoundTitle = styled.div``;

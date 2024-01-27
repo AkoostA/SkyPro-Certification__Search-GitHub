@@ -1,7 +1,3 @@
 import styled from "styled-components";
 
-export const DivContent = styled.div``;
-
-export const H2Main = styled.h2`
-
-`
+export const MainContent = styled.div``;

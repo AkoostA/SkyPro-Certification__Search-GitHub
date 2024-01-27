@@ -1,20 +1,18 @@
 import { useState } from "react";
+import * as S from "./Main.styled";
+import Cards from "../../components/Cards/Cards";
 import Header from "../../components/Header/Header";
 import Search from "../../components/Search/Search";
-import Filter from "../../components/Filter/Filter";
-import { DivContent, H2Main } from "./Main.styled";
 
 function Main() {
-  const [errorLog, serErrorLog] = useState<string>("");
-  const [isFilter, setIsFilter] = useState<boolean>(true);
+  const [errorLog, setErrorLog] = useState<string>("");
 
   return (
-    <DivContent>
+    <S.MainContent>
       <Header />
-      <Search isFilter={isFilter} serErrorLog={serErrorLog} />
-      <Filter isFilter={isFilter} setIsFilter={setIsFilter} />
-      {errorLog && <H2Main>{errorLog}</H2Main>}
-    </DivContent>
+      <Search errorLog={errorLog} setErrorLog={setErrorLog} />
+      <Cards setErrorLog={setErrorLog} />
+    </S.MainContent>
   );
 }
 
