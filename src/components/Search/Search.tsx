@@ -6,6 +6,7 @@ import { IError, IPropsSearch } from "../../interface/interface";
 import { isFilterSelector, totalCountSelector } from "../../store/selectors/selectors";
 import {
   countPageUpdate,
+  isLoadingUpdate,
   totalCountUpdate,
   userSearchUpdate,
   usersUpdate,
@@ -13,6 +14,7 @@ import {
 
 function Search({ setErrorLog }: IPropsSearch) {
   const dispatch = useDispatch();
+  const countPage: number = 1;
   const isFilter: boolean = useSelector(isFilterSelector);
   const totalCount: number = useSelector(totalCountSelector);
   const [userName, setUserName] = useState<string>("");
@@ -21,24 +23,26 @@ function Search({ setErrorLog }: IPropsSearch) {
   const buttonSearch = () => {
     setErrorLog("");
     setIsDisabled(true);
-    const countPage: number = 1;
+    dispatch(isLoadingUpdate(true));
     getUsers(userName, isFilter, countPage)
       .then((respGetUsers) => {
+        setUserName("");
         dispatch(countPageUpdate(1));
         dispatch(userSearchUpdate(userName));
         dispatch(usersUpdate(respGetUsers.usersData));
         dispatch(totalCountUpdate(respGetUsers.total_count));
-        setUserName("");
       })
       .catch((error: IError) => {
         setErrorLog(error.message);
+      })
+      .finally(() => {
+        dispatch(isLoadingUpdate(false));
       });
   };
 
-  const checkEnterClick = (e: React.KeyboardEvent<HTMLInputElement>) => {
-    if (e.key === "Enter") {
-      buttonSearch();
-    }
+  const pressEnter = (e: React.KeyboardEvent<HTMLInputElement>) => {
+    if (isDisabled) return;
+    if (e.key === "Enter") buttonSearch();
   };
 
   useEffect(() => {
@@ -51,7 +55,7 @@ function Search({ setErrorLog }: IPropsSearch) {
         <S.SearchInput
           value={userName}
           onChange={(e) => setUserName(e.target.value)}
-          onKeyDown={(e) => checkEnterClick(e)}
+          onKeyDown={(e) => pressEnter(e)}
           type="search"
           name="search"
           placeholder="Введите логин"

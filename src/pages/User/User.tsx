@@ -5,7 +5,7 @@ import { Link, useNavigate } from "react-router-dom";
 import { formatCreated } from "../../hooks/formatHooks";
 import { userSelector } from "../../store/selectors/selectors";
 
-function UserInfo() {
+function User() {
   const navigate = useNavigate();
   const user: IUser = useSelector(userSelector);
 
@@ -30,4 +30,4 @@ function UserInfo() {
   );
 }
 
-export default UserInfo;
+export default User;

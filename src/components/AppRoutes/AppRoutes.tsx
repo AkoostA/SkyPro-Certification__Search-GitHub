@@ -1,5 +1,5 @@
 import Main from "../../pages/Main/Main";
-import UserInfo from "../../pages/User/User";
+import User from "../../pages/User/User";
 import { Route, Routes } from "react-router-dom";
 import NotFound from "../../pages/NotFound/NotFound";
 
@@ -9,7 +9,7 @@ function AppRoutes() {
   return (
     <Routes>
       <Route path={PATH} element={<Main />} />
-      <Route path={`${PATH}/:id`} element={<UserInfo />} />
+      <Route path={`${PATH}/:user`} element={<User />} />
       <Route path="*" element={<NotFound />} />
     </Routes>
   );

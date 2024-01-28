@@ -7,8 +7,13 @@ export const Content = styled.div`
 
 export const FilterTitle = styled.h2``;
 
+export const ButtonBox = styled.div`
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+`;
+
 export const FilterButton = styled.button<{ $isActive: boolean }>`
-  margin-right: 20px;
   background: transparent;
   color: ${(props) => (props.$isActive ? "#235fd4" : "#597bbe")};
   border-bottom: ${(props) => (props.$isActive ? "1px solid #235fd4" : "none")};

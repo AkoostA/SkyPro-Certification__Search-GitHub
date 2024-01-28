@@ -21,6 +21,7 @@ export interface IResp {
 }
 
 export interface IPropsFilter {
+  isLoading: boolean;
   setErrorLog: React.Dispatch<React.SetStateAction<string>>;
 }
 
@@ -33,6 +34,7 @@ export interface IPropsCards {
 }
 
 export interface IPropsPagination {
+  isLoading: boolean;
   setErrorLog: React.Dispatch<React.SetStateAction<string>>;
 }
 

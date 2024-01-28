@@ -1,9 +1,13 @@
 import * as S from "./NotFound.styled";
+import { useNavigate } from "react-router";
 
 function NotFound() {
+  const navigate = useNavigate();
+
   return (
     <S.Content>
-      <S.NotFoundTitle>Упс 404, такой страницы не найдено</S.NotFoundTitle>
+      <S.NotFoundBackground />
+      <S.NotFoundButton onClick={() => navigate("/skypro__search-github")} />
     </S.Content>
   );
 }
