@@ -4,6 +4,7 @@ const initialState = {
   user: {},
   users: [],
   filter: true,
+  countPage: 1,
   totalCount: 0,
   userSearch: "",
 };
@@ -18,8 +19,11 @@ const reducers = createSlice({
     usersUpdate: (state, actions) => {
       state.users = actions.payload;
     },
-    isFilterUpdate: (state) => {
-      state.filter = !state.filter;
+    isFilterUpdate: (state, actions) => {
+      state.filter = actions.payload;
+    },
+    countPageUpdate: (state, actions) => {
+      state.countPage = actions.payload;
     },
     totalCountUpdate: (state, actions) => {
       state.totalCount = actions.payload;
@@ -30,6 +34,12 @@ const reducers = createSlice({
   },
 });
 
-export const { userUpdate, usersUpdate, isFilterUpdate, totalCountUpdate, userSearchUpdate } =
-  reducers.actions;
+export const {
+  userUpdate,
+  usersUpdate,
+  isFilterUpdate,
+  countPageUpdate,
+  totalCountUpdate,
+  userSearchUpdate,
+} = reducers.actions;
 export default reducers;

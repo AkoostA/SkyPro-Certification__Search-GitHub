@@ -1,6 +1,6 @@
 import styled from "styled-components";
 
-export const CardsContent = styled.div`
+export const Content = styled.div`
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(200px, 250px));
   justify-content: center;
@@ -20,17 +20,17 @@ export const CardsUser = styled.div`
   gap: 20px;
 `;
 
-export const CardsTitle = styled.h3`
+export const UserTitle = styled.h3`
   margin-top: 10px;
 `;
 
-export const CardsImg = styled.img`
+export const UserImg = styled.img`
   width: 150px;
   height: 150px;
   border-radius: 200px;
 `;
 
-export const CardsButton = styled.button`
+export const UserButton = styled.button`
   width: 180px;
   height: 30px;
   margin-bottom: 10px;

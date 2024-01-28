@@ -5,10 +5,7 @@ const PATH = "https://api.github.com";
 export function getUser(userName: string) {
   return fetch(`${PATH}/users/${userName}`)
     .then((respFetch) => {
-      if (respFetch.status === 403 || respFetch.status === 422)
-        throw new Error("Ошибка на сервере, попробуйте повторить позднее");
-      if (respFetch.status === 503)
-        throw new Error("Сервер не доступен, попробуйте повторить позднее");
+      statusCheck(respFetch);
       return respFetch.json();
     })
     .then((respUserData) => {
@@ -25,8 +22,8 @@ export function getUser(userName: string) {
     });
 }
 
-export function getUsers(userName: string, isFilter: boolean) {
-  const page = "&page=1";
+export function getUsers(userName: string, isFilter: boolean, countPage: number) {
+  const page = `&page=${countPage}`;
   const per_page = "&per_page=10";
   const sort = "&sort=repositories";
   const order = `&order=${isFilter ? "desc" : "asc"}`;
@@ -39,12 +36,7 @@ export function getUsers(userName: string, isFilter: boolean) {
     },
   })
     .then((respFetch) => {
-      if (respFetch.status === 403)
-        throw new Error("Превышено количество запросов, попробуйте повторить позднее");
-      if (respFetch.status === 422)
-        throw new Error("Ошибка на сервере, попробуйте повторить позднее");
-      if (respFetch.status === 503)
-        throw new Error("Сервер не доступен, попробуйте повторить позднее");
+      statusCheck(respFetch);
       return respFetch.json();
     })
     .then((respUsersData: IResp) => {
@@ -59,4 +51,10 @@ export function getUsers(userName: string, isFilter: boolean) {
       });
       return { usersData, total_count: respUsersData.total_count };
     });
+}
+
+function statusCheck(respFetch: Response) {
+  if (respFetch.status === 403) throw new Error("Превышено количество запросов, повторить позднее");
+  if (respFetch.status === 422) throw new Error("Ошибка на сервере, повторить позднее");
+  if (respFetch.status === 503) throw new Error("Сервер не доступен, повторить позднее");
 }

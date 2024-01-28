@@ -1,6 +1,6 @@
 import styled from "styled-components";
 
-export const FilterContent = styled.div`
+export const Content = styled.div`
   text-align: center;
   color: white;
 `;

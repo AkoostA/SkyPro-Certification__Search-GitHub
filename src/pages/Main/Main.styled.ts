@@ -1,3 +1,10 @@
 import styled from "styled-components";
 
-export const MainContent = styled.div``;
+export const Content = styled.div``;
+
+export const ErrorText = styled.p`
+  text-align: center;
+  margin-top: 20px;
+  font-size: 30px;
+  color: coral;
+`;

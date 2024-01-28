@@ -1,6 +1,6 @@
 import styled from "styled-components";
 
-export const SearchContent = styled.div``;
+export const Content = styled.div``;
 
 export const SearchUser = styled.div`
   height: 50px;
@@ -34,11 +34,4 @@ export const SearchText = styled.p`
   margin-top: 10px;
   margin-bottom: 10px;
   color: white;
-`;
-
-export const SearchErrorText = styled.p`
-  text-align: center;
-  margin-top: 20px;
-  font-size: 30px;
-  color: coral;
 `;

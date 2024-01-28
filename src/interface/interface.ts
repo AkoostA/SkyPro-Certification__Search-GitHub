@@ -15,17 +15,16 @@ export interface IUsers {
 }
 
 export interface IResp {
-  incomplete_results: boolean;
   items: IUsers[];
   total_count: number;
+  incomplete_results: boolean;
 }
 
 export interface IPropsFilter {
-  isFilter: boolean;
+  setErrorLog: React.Dispatch<React.SetStateAction<string>>;
 }
 
 export interface IPropsSearch {
-  errorLog: string;
   setErrorLog: React.Dispatch<React.SetStateAction<string>>;
 }
 
@@ -33,18 +32,8 @@ export interface IPropsCards {
   setErrorLog: React.Dispatch<React.SetStateAction<string>>;
 }
 
-export interface IPropsButtonSearch {
-  userName: string;
-  setUserName: React.Dispatch<React.SetStateAction<string>>;
-}
-
-export interface IHooksUsers {
-  userName: string;
-  isFilter: boolean;
-  dispatch: Function;
+export interface IPropsPagination {
   setErrorLog: React.Dispatch<React.SetStateAction<string>>;
-  setUserName: React.Dispatch<React.SetStateAction<string>>;
-  setIsDisabled: React.Dispatch<React.SetStateAction<boolean>>;
 }
 
 export interface IError {

@@ -1,39 +1,37 @@
 import * as S from "./Search.styled";
-import Filter from "../Filter/Filter";
 import { getUsers } from "../../api/api";
 import { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { IError, IPropsSearch } from "../../interface/interface";
+import { isFilterSelector, totalCountSelector } from "../../store/selectors/selectors";
 import {
-  isFilterSelector,
-  totalCountSelector,
-  userSearchSelector,
-} from "../../store/selectors/selectors";
-import { totalCountUpdate, userSearchUpdate, usersUpdate } from "../../store/reducers/reducers";
+  countPageUpdate,
+  totalCountUpdate,
+  userSearchUpdate,
+  usersUpdate,
+} from "../../store/reducers/reducers";
 
-function Search({ errorLog, setErrorLog }: IPropsSearch) {
+function Search({ setErrorLog }: IPropsSearch) {
   const dispatch = useDispatch();
   const isFilter: boolean = useSelector(isFilterSelector);
   const totalCount: number = useSelector(totalCountSelector);
-  const userSearch: string = useSelector(userSearchSelector);
   const [userName, setUserName] = useState<string>("");
   const [isDisabled, setIsDisabled] = useState<boolean>(true);
 
   const buttonSearch = () => {
     setErrorLog("");
     setIsDisabled(true);
-    const checkUserName = userName ? userName : userSearch;
-    getUsers(checkUserName, isFilter)
+    const countPage: number = 1;
+    getUsers(userName, isFilter, countPage)
       .then((respGetUsers) => {
-        dispatch(userSearchUpdate(checkUserName));
+        dispatch(countPageUpdate(1));
+        dispatch(userSearchUpdate(userName));
         dispatch(usersUpdate(respGetUsers.usersData));
         dispatch(totalCountUpdate(respGetUsers.total_count));
+        setUserName("");
       })
       .catch((error: IError) => {
         setErrorLog(error.message);
-      })
-      .finally(() => {
-        setUserName("");
       });
   };
 
@@ -47,13 +45,8 @@ function Search({ errorLog, setErrorLog }: IPropsSearch) {
     userName ? setIsDisabled(false) : setIsDisabled(true);
   }, [userName]);
 
-  useEffect(() => {
-    if (!userName && !userSearch) return;
-    buttonSearch();
-  }, [isFilter]);
-
   return (
-    <S.SearchContent>
+    <S.Content>
       <S.SearchUser>
         <S.SearchInput
           value={userName}
@@ -68,9 +61,7 @@ function Search({ errorLog, setErrorLog }: IPropsSearch) {
         </S.SearchButton>
       </S.SearchUser>
       <S.SearchText>Количество совпадений: {totalCount}</S.SearchText>
-      <Filter isFilter={isFilter} />
-      {errorLog && <S.SearchErrorText>{errorLog}</S.SearchErrorText>}
-    </S.SearchContent>
+    </S.Content>
   );
 }
 

@@ -29,17 +29,17 @@ function Cards({ setErrorLog }: IPropsCards) {
   };
 
   return (
-    <S.CardsContent>
+    <S.Content>
       {users.map((user) => (
         <S.CardsUser key={user.id}>
-          <S.CardsTitle>{user.login}</S.CardsTitle>
-          <S.CardsImg src={user.avatar_url} alt="avatar"></S.CardsImg>
-          <S.CardsButton disabled={isDisabled} onClick={() => userInfo(user)}>
-            Подробная информация
-          </S.CardsButton>
+          <S.UserTitle>{user.login}</S.UserTitle>
+          <S.UserImg src={user.avatar_url} alt="avatar"></S.UserImg>
+          <S.UserButton disabled={isDisabled} onClick={() => userInfo(user)}>
+            {isDisabled ? "Данные грузятся" : "Подробная информация"}
+          </S.UserButton>
         </S.CardsUser>
       ))}
-    </S.CardsContent>
+    </S.Content>
   );
 }
 

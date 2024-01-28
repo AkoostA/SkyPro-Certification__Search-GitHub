@@ -10,7 +10,7 @@ function UserInfo() {
   const user: IUser = useSelector(userSelector);
 
   return (
-    <S.UserContent>
+    <S.Content>
       <S.UserCard>
         <S.UserImg src={user.avatar} alt="avatar" />
         <S.UserDetail>
@@ -26,7 +26,7 @@ function UserInfo() {
           </S.UserButton>
         </S.UserDetail>
       </S.UserCard>
-    </S.UserContent>
+    </S.Content>
   );
 }
 
