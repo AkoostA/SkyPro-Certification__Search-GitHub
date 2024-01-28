@@ -45,7 +45,7 @@ function Pagination({ isLoading, setErrorLog }: IPropsPagination) {
 
   return (
     <S.Content>
-      {isLoading ? null : (
+      {isLoading || !userSearch ? null : (
         <S.ButtonBlock>
           <S.ButtonPrevNext onClick={() => switchPage("prev")}>Назад</S.ButtonPrevNext>
           <S.NumberPage>{countPage}</S.NumberPage>
