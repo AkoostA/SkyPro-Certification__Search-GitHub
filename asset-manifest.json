@@ -1,11 +1,11 @@
 {
   "files": {
-    "main.js": "/skypro__search-github/static/js/main.81b7d2dd.js",
+    "main.js": "/skypro__search-github/static/js/main.d19e57d3.js",
     "static/media/notFound.jpg": "/skypro__search-github/static/media/notFound.590a2aae8bc382dd962a.jpg",
     "index.html": "/skypro__search-github/index.html",
-    "main.81b7d2dd.js.map": "/skypro__search-github/static/js/main.81b7d2dd.js.map"
+    "main.d19e57d3.js.map": "/skypro__search-github/static/js/main.d19e57d3.js.map"
   },
   "entrypoints": [
-    "static/js/main.81b7d2dd.js"
+    "static/js/main.d19e57d3.js"
   ]
 }
