@@ -19,6 +19,7 @@
 ---
 ## Ссылка на проект
 [Deployment выполнен на платформе GitHub Pages](https://akoosta.github.io/skypro__search-github/)
+
 ---
 ## Запуск проекта локально
 #### Склонируйте репозиторий
