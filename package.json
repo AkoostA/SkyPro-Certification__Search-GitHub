@@ -1,6 +1,7 @@
 {
   "name": "search-github",
   "version": "0.1.0",
+  "homepage": "https://AkoostA.github.io/skypro__search-github",
   "private": true,
   "dependencies": {
     "@reduxjs/toolkit": "^2.1.0",
