@@ -24,7 +24,7 @@ export function getUser(userName: string) {
 
 export function getUsers(userName: string, isFilter: boolean, countPage: number) {
   const page = `&page=${countPage}`;
-  const per_page = "&per_page=10";
+  const per_page = "&per_page=12";
   const sort = "&sort=repositories";
   const order = `&order=${isFilter ? "desc" : "asc"}`;
   const uriComponent = encodeURIComponent(`${userName} in:login`);

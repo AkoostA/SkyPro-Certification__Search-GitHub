@@ -1,8 +1,8 @@
 import styled from "styled-components";
 
-export const Content = styled.div``;
-
-export const LoadingBlock = styled.div``;
+export const Content = styled.div`
+  padding: 20px 30px;
+`;
 
 export const ErrorText = styled.p`
   text-align: center;

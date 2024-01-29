@@ -8,7 +8,8 @@ const GlobalStyles = createGlobalStyle`
 
     body {
         background-color: #0d1117;
-        padding: 20px 30px;
+        padding-left: calc(50% - 780px);
+        padding-right: calc(50% - 780px);
     }
 
     button, input {

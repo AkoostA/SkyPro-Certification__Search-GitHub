@@ -2,7 +2,7 @@ import styled from "styled-components";
 
 export const Content = styled.div`
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(200px, 250px));
+  grid-template-columns: repeat(auto-fit, minmax(301px, 301px));
   justify-content: center;
   justify-items: center;
   margin-top: 20px;
@@ -11,12 +11,13 @@ export const Content = styled.div`
 
 export const CardsUser = styled.div`
   background-color: #484f58;
-  width: 230px;
+  width: 260px;
   height: 280px;
   border-radius: 10px;
   display: flex;
   flex-direction: column;
   align-items: center;
+  justify-content: center;
   gap: 20px;
 `;
 

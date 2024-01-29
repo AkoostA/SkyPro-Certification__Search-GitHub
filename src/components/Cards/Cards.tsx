@@ -16,7 +16,7 @@ function Cards({ setErrorLog }: IPropsCards) {
     getUser(user.login)
       .then((userData) => {
         dispatch(userUpdate(userData));
-        navigate("/user");
+        navigate(`/user/${user.login}`);
       })
       .catch((error: IError) => {
         setErrorLog(error.message);

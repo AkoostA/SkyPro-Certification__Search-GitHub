@@ -7,7 +7,7 @@ function AppRoutes() {
   return (
     <Routes>
       <Route path="/" element={<Main />} />
-      <Route path="/user" element={<User />} />
+      <Route path="/user/:info" element={<User />} />
       <Route path="*" element={<NotFound />} />
     </Routes>
   );
