@@ -7,7 +7,7 @@ function NotFound() {
   return (
     <S.Content>
       <S.NotFoundBackground />
-      <S.NotFoundButton onClick={() => navigate("/skypro__search-github")} />
+      <S.NotFoundButton onClick={() => navigate("/")} />
     </S.Content>
   );
 }

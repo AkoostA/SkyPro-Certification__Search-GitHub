@@ -21,7 +21,7 @@ function User() {
           <Link to={user.url} target="_blank">
             <S.UserButton>Профиль</S.UserButton>
           </Link>
-          <S.UserButton onClick={() => navigate("/skypro__search-github")}>
+          <S.UserButton onClick={() => navigate("/")}>
             Назад к поиску
           </S.UserButton>
         </S.UserDetail>
