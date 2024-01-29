@@ -16,7 +16,7 @@ function Cards({ setErrorLog }: IPropsCards) {
     getUser(user.login)
       .then((userData) => {
         dispatch(userUpdate(userData));
-        navigate(`/skypro__search-github/user-${user.login}`);
+        navigate("/user");
       })
       .catch((error: IError) => {
         setErrorLog(error.message);
