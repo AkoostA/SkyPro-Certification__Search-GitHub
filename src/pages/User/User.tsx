@@ -21,9 +21,7 @@ function User() {
           <Link to={user.url} target="_blank">
             <S.UserButton>Профиль</S.UserButton>
           </Link>
-          <S.UserButton onClick={() => navigate("/")}>
-            Назад к поиску
-          </S.UserButton>
+          <S.UserButton onClick={() => navigate("/")}>Назад к поиску</S.UserButton>
         </S.UserDetail>
       </S.UserCard>
     </S.Content>

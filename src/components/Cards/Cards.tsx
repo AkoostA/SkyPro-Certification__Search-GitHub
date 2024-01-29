@@ -11,7 +11,7 @@ function Cards({ setErrorLog }: IPropsCards) {
   const navigate = useNavigate();
   const users: IUsers[] = useSelector(usersSelector);
 
-  const userInfo = (user: IUsers) => {
+  const getUserInfo = (user: IUsers) => {
     dispatch(isLoadingUpdate(true));
     getUser(user.login)
       .then((userData) => {
@@ -32,7 +32,7 @@ function Cards({ setErrorLog }: IPropsCards) {
         <S.CardsUser key={user.id}>
           <S.UserTitle>{user.login}</S.UserTitle>
           <S.UserImg src={user.avatar_url} alt="avatar"></S.UserImg>
-          <S.UserButton onClick={() => userInfo(user)}>Подробная информация</S.UserButton>
+          <S.UserButton onClick={() => getUserInfo(user)}>Подробная информация</S.UserButton>
         </S.CardsUser>
       ))}
     </S.Content>

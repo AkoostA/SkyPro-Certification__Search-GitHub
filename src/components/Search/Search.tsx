@@ -20,7 +20,7 @@ function Search({ setErrorLog }: IPropsSearch) {
   const [userName, setUserName] = useState<string>("");
   const [isDisabled, setIsDisabled] = useState<boolean>(true);
 
-  const buttonSearch = () => {
+  const searchUsersButton = () => {
     setErrorLog("");
     setIsDisabled(true);
     dispatch(isLoadingUpdate(true));
@@ -40,9 +40,9 @@ function Search({ setErrorLog }: IPropsSearch) {
       });
   };
 
-  const pressEnter = (e: React.KeyboardEvent<HTMLInputElement>) => {
+  const checkPressEnter = (e: React.KeyboardEvent<HTMLInputElement>) => {
     if (isDisabled) return;
-    if (e.key === "Enter") buttonSearch();
+    if (e.key === "Enter") searchUsersButton();
   };
 
   useEffect(() => {
@@ -55,12 +55,12 @@ function Search({ setErrorLog }: IPropsSearch) {
         <S.SearchInput
           value={userName}
           onChange={(e) => setUserName(e.target.value)}
-          onKeyDown={(e) => pressEnter(e)}
+          onKeyDown={(e) => checkPressEnter(e)}
           type="search"
           name="search"
           placeholder="Введите логин"
         />
-        <S.SearchButton onClick={buttonSearch} disabled={isDisabled}>
+        <S.SearchButton onClick={searchUsersButton} disabled={isDisabled}>
           Поиск
         </S.SearchButton>
       </S.SearchUser>

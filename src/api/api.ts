@@ -55,6 +55,6 @@ export function getUsers(userName: string, isFilter: boolean, countPage: number)
 
 function statusCheck(respFetch: Response) {
   if (respFetch.status === 403) throw new Error("Превышено количество запросов, повторить позднее");
-  if (respFetch.status === 422) throw new Error("Ошибка на сервере, повторить позднее");
+  if (respFetch.status === 422) throw new Error("Введены не допустимые символы");
   if (respFetch.status === 503) throw new Error("Сервер не доступен, повторить позднее");
 }
