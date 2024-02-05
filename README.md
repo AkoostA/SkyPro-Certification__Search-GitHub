@@ -1,1 +1,1 @@
-# В этой ветке комелируется deployments на github-pages
+# В этой ветке компилируется deployments на github-pages
