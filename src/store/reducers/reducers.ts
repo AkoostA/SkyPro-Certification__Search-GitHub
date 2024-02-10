@@ -41,7 +41,7 @@ const reducers = createSlice({
       state.userSearch = actions.payload;
       sessionStorage.setItem("userSearch", JSON.stringify(actions.payload));
     },
-    localStorageUpdate: (state) => {
+    sessionStorageUpdate: (state) => {
       const user = sessionStorage.getItem("user");
       const users = sessionStorage.getItem("users");
       const isFilter = sessionStorage.getItem("isFilter");
@@ -66,6 +66,6 @@ export const {
   countPageUpdate,
   totalCountUpdate,
   userSearchUpdate,
-  localStorageUpdate,
+  sessionStorageUpdate,
 } = reducers.actions;
 export default reducers;
